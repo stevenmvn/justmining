@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -70,7 +71,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return view('product.show', compact('product'));
     }
 
     /**
@@ -81,7 +82,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return view('product.edit', compact('product'));
     }
 
     /**
@@ -93,7 +94,30 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        //Valider les données envoyées
+        $rules = [
+            'name' => 'bail|required|string|max:191',
+            'description' => 'bail|required',
+            'price' => 'bail|required|numeric',
+        ];
+
+        //L'utilisateur envoie une nouvelle image
+        if ($request->has('picture')) {
+            $rules['picture'] = 'bail|required|image|max:2048';
+
+            Storage::delete($product->picture);
+            $path = $request->picture->store("products");
+        }
+
+        //Stocke les données actualisées 
+        $product->update([
+            'name' => $request->name,
+            'description' => $request->description,
+            'price' => $request->price,
+            'picture' =>isset($path) ? $path : $product->picture,
+        ]);
+
+        return redirect(route("products.show", $product))->with('status', 'Les informations du produit ont bien été mis à jour');
     }
 
     /**
@@ -104,6 +128,13 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        //Supprime l'image
+        Storage::delete($product->picture);
+
+        //Supprime les informations stockées du produit
+        $product->delete();
+
+        //Redirige vers la liste des produits
+        return redirect(route("products.index"))->with('status', 'Le produit a bien été supprimé');
     }
 }

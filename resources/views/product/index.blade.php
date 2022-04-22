@@ -11,10 +11,13 @@
     @endif
 
     @forelse($products as $product)
-        <p>{{$product->name}}</p>
-        <p>{{$product->description}}</p>
-        <p>{{$product->price}}</p>
-        <img src="{{ asset('storage/'.$product->picture) }}">
+        <a href="{{ route('products.show', $product) }}">
+            <p>{{$product->name}}</p>
+            <p>{{$product->description}}</p>
+            <p>{{$product->price}}</p>
+            <img src="{{ asset('storage/'.$product->picture) }}">
+        </a>
+        
         <hr>
     @empty
         <p>Aucun produit n'est actuellement disponible</p>
