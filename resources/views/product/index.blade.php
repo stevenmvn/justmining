@@ -22,4 +22,6 @@
     @empty
         <p>Aucun produit n'est actuellement disponible</p>
     @endforelse
+
+    {!! $products->links('includes.pagination') !!}
 @endsection
