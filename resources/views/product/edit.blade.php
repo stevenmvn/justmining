@@ -4,11 +4,19 @@
     
 
     @if (isset($product))
-    <h1>Modifier le produit</h1>
+    <div class="page-head">
+        <h1 class="page-head__title">Modifier mon NFT</h1>
+        <a class="btn btn__img btn--primary" href="{{ route('products.index') }}" ><img src="{{ asset('images/back.svg') }}" alt="Icone retour">Revenir aux NFT</a>
+    </div>
+
     <form action="{{ route('products.update', $product) }}" method="post" enctype="multipart/form-data">
         @method('PUT')
     @else
-    <h1>Ajouter un produit</h1>
+    <div class="page-head">
+        <h1 class="page-head__title">Ajouter mon NFT</h1>
+        <a class="btn btn__img btn--primary" href="{{ route('products.index') }}" ><img src="{{ asset('images/back.svg') }}" alt="Icone retour">Revenir aux NFT</a>
+    </div>
+
     <form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data">
     @endif
 

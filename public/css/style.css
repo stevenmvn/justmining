@@ -1,0 +1,33 @@
+* {margin: 0; padding: 0; border: none; box-sizing: border-box; list-style: none; font-family: 'Poppins', sans-serif; text-decoration: none;}
+body{background-color: #fafafa;}
+
+.container{padding: 30px;}
+
+.page-head{display: flex; align-items: center; justify-content: space-between; margin-bottom: 30px;}
+.page-head .page-head__title{font-size: 24px; font-weight: 600; color: #1d202a;}
+
+.page-row{}
+
+.cards{display: flex; flex-wrap: wrap; margin-top: -30px; margin-left: -30px; margin-bottom: 30px;}
+.cards .card{background-color: #fff; border-radius: 30px; margin-top: 30px; box-sizing: border-box; margin-left: 30px; width: calc(33.33% - 30px); overflow: hidden; box-shadow: 0 7px 30px -10px rgb(150 170 180 / 50%);}
+.cards .card .card__head{display: flex; align-items: center; position: relative;}
+.cards .card .card__head img{width: 100%;}
+.cards .card .card__head .card__price{position: absolute; top: 15px; right: 15px; display: flex; align-items: center; justify-content: space-between; background-color: #fff; padding: 5px 15px; border-radius: 15px; font-size: 18px; font-weight: 600; color: #1d202a;}
+.cards .card .card__head .card__price img{height: 1.2em; margin-right: 1em;}
+.cards .card .card__body{display: flex; align-items: center; justify-content: space-between; position: relative; color: #1d202a; padding: 15px;}
+.cards .card .card__body .card__ending, .card__info{display: flex; flex-direction: column;}
+.cards .card .card__body .card__info strong{font-size: 20px; font-weight: 600;}
+.cards .card .card__body .card__info span{font-size: 14px; color: #a1a1a1;}
+.cards .card .card__body .card__ending{align-items: center; padding: 5px 15px; border-radius: 15px;}
+.cards .card .card__body .card__ending.card__ending--primary{background-color: #1d202a; color: #fff;}
+.cards .card .card__body .card__ending span{font-size: 14px; color: #a1a1a1;}
+.cards .card .card__body .card__ending strong{font-size: 16px; font-weight: 600;}
+
+.btn{padding: 10px 30px; font-size: 16px; border-radius: 15px;}
+.btn.btn__img{display: flex; align-items: center;}
+.btn.btn__img img{height: 1.2em; margin-right: 0.5em;}
+.btn.btn--primary{color: #fff; background-color: #1d202a;}
+
+.pagination{display: flex; justify-content: space-between; align-items: center;}
+.pagination li span{padding: 10px 30px; font-size: 16px; border-radius: 15px; background-color: #fff; color: #1d202a; display: block;}
+.pagination li a{display: block;}
