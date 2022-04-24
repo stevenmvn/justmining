@@ -51,7 +51,7 @@ body{background-color: #fafafa;}
 .btn{padding: 10px 30px; font-size: 16px; border-radius: 15px; transition: all 0.3s; position: relative; overflow: hidden; cursor: pointer;}
 .btn::before{content: ''; position: absolute; top: 0; left: 0; width: 0; height: 100%; background-color: #ffffff1f; transition: width 0.3s;}
 .btn:hover::before{width: 100%;}
-.btn.btn__img{display: flex; align-items: center; justify-content: center;}
+.btn.btn__img{display: flex!important; align-items: center; justify-content: center;}
 .btn.btn__img img{height: 1.2em; margin-right: 0.5em;}
 .btn.btn--primary{color: #fff!important; background-color: #1d202a;}
 .btn.btn--error{color: #fff; background-color: #a72e2e;}
