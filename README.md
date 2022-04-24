@@ -11,7 +11,7 @@ L'objectif était de créer un site vitrine qui présente des produits (NFT dans
 
 ### Développé sous
 
-* [Laravel](https://laravel.com)
+* [Laravel 8](https://laravel.com)
 
 <p align="right">
 
