@@ -1,7 +1,7 @@
 <!-- ABOUT THE PROJECT -->
 ## Le projet
 
-![Screenshot]()
+![Screenshot](https://github.com/stevenmvn/justmining/blob/main/screenshot.PNG)
 
 L'objectif était de créer un site vitrine qui présente des produits (NFT dans notre cas).
 
