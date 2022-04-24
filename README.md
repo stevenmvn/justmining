@@ -40,7 +40,7 @@ L'objectif était de créer un site vitrine qui présente des produits (NFT dans
 
 ### Installation (Windows)
 
-1. Cloner ce repository et ce rendre dans le dossier
+1. Cloner ce repository et se rendre dans le dossier
    ```sh
    git clone https://github.com/stevenmvn/justmining.git
    cd justmining
