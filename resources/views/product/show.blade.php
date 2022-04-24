@@ -15,7 +15,7 @@
             <div class="box__content__right product">
                 <div class="product__info">
                     <p class="__title">Description</p>
-                    <p class="__info">{{$product->description}}</p>
+                    <p class="__info mw-500">{{$product->description}}</p>
 
                     <p class="__title">Disponibilité</p>
                     <p class="__info {{$product->sallable != 1 ? 'sale--on' : 'sale--off'}}">{{$product->sallable != 1 ? 'Disponible' : 'Indisponible'}}</p>

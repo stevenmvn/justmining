@@ -87,7 +87,7 @@ body{background-color: #fafafa;}
 .is-invalid{border-color: #a72e2e!important;}
 .text-invalid{color: #a72e2e; font-weight: 600; font-size: 0.7em;}
 .no-product{flex: none; width: 100%; text-align: center; margin-top: 30px;}
-
+.mw-500{max-width: 500px;}
 @media (max-width: 1000px) {
     .card{width: calc(50% - 30px)!important;}
 }
