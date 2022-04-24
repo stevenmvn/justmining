@@ -18,7 +18,6 @@ class ProductFactory extends Factory
     public function definition()
     {
         $pics = [
-            '1392',
             '2406',
             '2786',
             '3232',
