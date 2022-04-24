@@ -11,7 +11,7 @@ L'objectif était de créer un site vitrine qui présente des produits (NFT dans
 
 ### Développé sous
 
-* [Laravel](https://laravel.com)
+* [Laravel 8](https://laravel.com)
 
 <p align="right">
 
@@ -40,7 +40,7 @@ L'objectif était de créer un site vitrine qui présente des produits (NFT dans
 
 ### Installation (Windows)
 
-1. Cloner ce repository et ce rendre dans le dossier
+1. Cloner ce repository et se rendre dans le dossier
    ```sh
    git clone https://github.com/stevenmvn/justmining.git
    cd justmining
