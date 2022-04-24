@@ -17,7 +17,7 @@ class ProductController extends Controller
     public function index()
     {
         //Récupère tous les produits dans l'ordre d'ajout 
-        $products = Product::paginate(3);
+        $products = Product::paginate(9);
 
         //Envoie les produits dans la vue 
         return view("product.index", compact("products"));
@@ -45,18 +45,20 @@ class ProductController extends Controller
         $this->validate($request, [
             'name' => 'bail|required|string|max:191',
             'description' => 'bail|required',
-            'price' => 'bail|required|numeric',
+            'price' => 'bail|required|numeric|min:0.01',
             'picture' => 'bail|required|image|max:2048',
         ]);
 
         //Sauvegarde l'image
         $path = $request->picture->store('products');
 
+        
         //Stocke les données 
         Product::create([
             'name' => $request->name,
             'description' => $request->description,
             'price' => $request->price,
+            'sallable' => $request->sallable ? 1 : 0,
             'picture' =>$path,
         ]);
 
@@ -99,7 +101,7 @@ class ProductController extends Controller
         $rules = [
             'name' => 'bail|required|string|max:191',
             'description' => 'bail|required',
-            'price' => 'bail|required|numeric',
+            'price' => 'bail|required|numeric|min:0.01',
         ];
 
         //L'utilisateur envoie une nouvelle image
@@ -115,6 +117,7 @@ class ProductController extends Controller
             'name' => $request->name,
             'description' => $request->description,
             'price' => $request->price,
+            'sallable' => $request->sallable ? 1 : 0,
             'picture' =>isset($path) ? $path : $product->picture,
         ]);
 

@@ -18,5 +18,6 @@
     <div class="container">
         @yield('content')
     </div>
+    <script type="text/javascript" src="{{ asset('js/mobile.js') }}" defer></script>
 </body>
 </html>

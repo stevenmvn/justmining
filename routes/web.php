@@ -15,6 +15,9 @@ use App\Http\Controllers\ProductController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return redirect(route('products.index'));
 });
 Route::resource('products', ProductController::class);
+Route::any('{query}', function () {
+    return redirect(route('products.index'));
+});
